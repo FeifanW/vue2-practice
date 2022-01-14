@@ -20,7 +20,8 @@ export default {
       console.log("打印出来了！")
     },
     output1(){
-      console.log("打印出来world了！")
+
+      console.log("打印出来this了！",this)
     },
     cancel(){
       // this.$refs.test.$off('hello')
@@ -29,12 +30,11 @@ export default {
     }
   },
   mounted(){
-    this.$refs.test.$on('hello',this.output)
+    this.$refs.test.$on('hello',function(){
+      console.log(this)
+    })
     this.$refs.test.$on('world',this.output1)
     // this.$refs.test.$once('hello',this.output)
-    setTimeout(()=>{
-      this.$destroy()
-    },3000)
   }
 }
 </script>
