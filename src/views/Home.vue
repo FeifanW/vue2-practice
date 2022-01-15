@@ -9,7 +9,7 @@
 <script>
 // @ is an alias to /src
 import HelloWorld from '@/components/HelloWorld.vue'
-
+import pubsub from 'pubsub-js'
 export default {
   name: 'Home',
   components: {
@@ -30,14 +30,23 @@ export default {
     }
   },
   mounted(){
-    this.$refs.test.$on('hello',function(){
-      console.log(this)
+    // this.$refs.test.$on('hello',function(){
+    //   console.log(this)
+    // })
+    // this.$refs.test.$on('world',this.output1)
+    // // this.$refs.test.$once('hello',this.output)
+    // this.$bus.$on('testBus',function(){
+    //   console.log("接收到了bus传过来的数据")
+    // })
+
+    // 接收数据
+    this.pubId = pubsub.subscribe('testPub',function(msgName,data){
+      console.log("接收到了pubsub消息",msgName,data)
     })
-    this.$refs.test.$on('world',this.output1)
-    // this.$refs.test.$once('hello',this.output)
-    this.$bus.$on('testBus',function(){
-      console.log("接收到了bus传过来的数据")
-    })
+  },
+  beforeDestroy(){
+    // 销毁的时候，关闭发布订阅
+    // pubsub.unsubscribe(this.pubId)
   }
 }
 </script>

@@ -33,6 +33,7 @@
 </template>
 
 <script>
+import pubsub from 'pubsub-js'
 export default {
   name: 'HelloWorld',
   props: {
@@ -40,12 +41,15 @@ export default {
   },
   methods:{
     helloworld(){
-      this.$emit('hello')
-      this.$emit('world')
+      // this.$emit('hello')
+      // this.$emit('world')
+      pubsub.publish('testPub',"发布订阅插件测试")
+
     }
   },
   mounted(){
-    this.$bus.$emit('testBus')
+    // this.$bus.$emit('testBus')
+    // 发布
   }
 }
 </script>
