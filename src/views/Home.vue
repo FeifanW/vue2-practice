@@ -35,6 +35,9 @@ export default {
     })
     this.$refs.test.$on('world',this.output1)
     // this.$refs.test.$once('hello',this.output)
+    this.$bus.$on('testBus',function(){
+      console.log("接收到了bus传过来的数据")
+    })
   }
 }
 </script>

@@ -43,6 +43,9 @@ export default {
       this.$emit('hello')
       this.$emit('world')
     }
+  },
+  mounted(){
+    this.$bus.$emit('testBus')
   }
 }
 </script>
