@@ -1,7 +1,8 @@
 <template>
   <div class="category">
     <h3>xxxx分类</h3>
-    <slot>我是默认值</slot>
+    <slot name="first">我是默认值1</slot>
+    <slot name="second">我是默认值2</slot>
     <ul>
       <li>xxxx</li>
       <li>xxxx</li>
