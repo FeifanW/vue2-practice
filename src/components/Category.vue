@@ -1,15 +1,7 @@
 <template>
   <div class="category">
     <h3>xxxx分类</h3>
-    <slot name="first">我是默认值1</slot>
-    <slot name="second">我是默认值2</slot>
-    <ul>
-      <li>xxxx</li>
-      <li>xxxx</li>
-      <li>xxxx</li>
-      <li>xxxx</li>
-      <li>xxxx</li>
-    </ul>
+    <slot :hello="games">我是默认值1</slot>
   </div>
 </template>
 
@@ -18,7 +10,7 @@ export default {
   name: 'Test',
   data(){
       return {
-          
+          games:["植物大战僵尸","魂斗罗","赛尔号","弹弹堂"]
       }
   },
   methods:{
