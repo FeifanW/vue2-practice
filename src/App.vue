@@ -1,6 +1,6 @@
 <template>
   <div id="container">
-    <div>{{num}}</div>
+    <div>{{$store.state.sum}}</div>
     <button @click="add">+</button>
   </div>
 </template>
@@ -18,7 +18,7 @@ export default {
   },
   methods:{
     add(){
-      this.$store.dispatch('add',1)
+      this.$store.commit('Add',1)
     }
   }
 }
