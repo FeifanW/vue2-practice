@@ -16,6 +16,14 @@ export default new Vuex.Store({
   actions: {
     add(a,b){
       a.commit('Add',b)
+      a.dispatch('demo1',b)
+    },
+    demo1(a,b){
+      console.log("全写在add里面有点多所以把部分处理放到下面的demo中")
+      a.dispatch('demo2',b)
+    },
+    demo2(a,b){
+      console.log("demo2") 
     }
   },
   modules: {

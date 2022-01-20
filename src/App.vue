@@ -18,7 +18,7 @@ export default {
   },
   methods:{
     add(){
-      this.$store.commit('Add',1)
+      this.$store.dispatch('add',1)
     }
   }
 }
