@@ -2,6 +2,7 @@
   <div id="container">
     <div>{{$store.state.sum}}</div>
     <button @click="add">+</button>
+    <div>{{$store.getters.bigSum}}</div>
   </div>
 </template>
 <script>

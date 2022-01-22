@@ -26,6 +26,11 @@ export default new Vuex.Store({
       console.log("demo2") 
     }
   },
+  getters:{
+    bigSum(state){
+      return state.sum*10
+    }
+  },
   modules: {
   }
 })
