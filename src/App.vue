@@ -2,13 +2,13 @@
   <div id="container">
     <div>{{sum}}</div>
     <!-- <div>{{$store.state.sum}}</div> -->
-    <button @click="add">+</button>
+    <button @click="add(1)">+</button>
     <div>{{bigSum}}</div>
     <!-- <div>{{$store.getters.bigSum}}</div> -->
   </div>
 </template>
 <script>
-import {mapState, mapGetters} from 'vuex'
+import {mapState, mapGetters, mapMutations,mapActions} from 'vuex'
 import Category from './components/Category.vue'
 export default {
   data(){
@@ -32,9 +32,15 @@ export default {
     console.log(this)
   },
   methods:{
-    add(){
-      this.$store.dispatch('add',1)
-    }
+    // add(){
+    //   this.$store.dispatch('add',1)
+    // },
+    // mapMutations练习
+    // ...mapMutations({add:'Add'})
+    // ...mapMutations(['Add'])
+    // mapActions练习
+    // ...mapActions({Add:'add'})
+    ...mapActions(['add'])
   }
 }
 </script>
