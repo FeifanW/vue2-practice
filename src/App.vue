@@ -5,7 +5,7 @@
     <button @click="add(1)">+</button>
     <div>{{bigSum}}</div>
     <!-- <div>{{$store.getters.bigSum}}</div> -->
-    <Category></Category>
+    <!-- <Category></Category> -->
   </div>
 </template>
 <script>
@@ -22,12 +22,12 @@ export default {
     // 对象写法
     // ...mapState({sum:'sum'})
     // 数组写法
-    ...mapState(['sum']),
+    ...mapState('addOptions',['sum']),
 
     // 对象写法
     // ...mapGetters({big:'bigSum'}),
     // 数组写法
-    ...mapGetters(['bigSum'])
+    ...mapGetters('addOptions',['bigSum'])
   },
   mounted() {
     console.log(this)
@@ -41,7 +41,7 @@ export default {
     // ...mapMutations(['Add'])
     // mapActions练习
     // ...mapActions({Add:'add'})
-    ...mapActions(['add'])
+    ...mapActions('addOptions',['add'])
   }
 }
 </script>

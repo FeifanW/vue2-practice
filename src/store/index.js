@@ -3,8 +3,9 @@ import Vuex from 'vuex'
 
 Vue.use(Vuex)
 
-// 创建vuex，并且直接导出
-export default new Vuex.Store({
+// 相加的相关配置
+const addOptions = {
+  namespaced:true,
   state: {
     sum:0
   },
@@ -31,6 +32,11 @@ export default new Vuex.Store({
       return state.sum*10
     }
   },
+}
+
+// 创建vuex，并且直接导出
+export default new Vuex.Store({
   modules: {
+    addOptions
   }
 })
