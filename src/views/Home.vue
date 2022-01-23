@@ -7,7 +7,7 @@
     <!-- <router-link :to='`/home/about?content=${test}`'>about</router-link> -->
     <!-- to的对象写法 -->
     <router-link :to="{
-      path:'/home/about',
+      name:'About',
       query:{
         title:test
       }
