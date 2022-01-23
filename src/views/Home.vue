@@ -3,6 +3,8 @@
     <img alt="Vue logo" src="../assets/logo.png">
     <HelloWorld ref="test" msg="Welcome to Your Vue.js App"/>
     <button @click="cancel">解绑</button>
+    <router-link to='/home/about'>about</router-link>
+    <router-view></router-view>
   </div>
 </template>
 
