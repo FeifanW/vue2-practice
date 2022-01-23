@@ -2,7 +2,8 @@
   <div id="container">
     <div>{{sum}}</div>
     <!-- <div>{{$store.state.sum}}</div> -->
-    <button @click="add(1)">+</button>
+    <button @click="add">+</button>
+    <!-- <button @click="add(1)">+</button> -->
     <div>{{bigSum}}</div>
     <!-- <div>{{$store.getters.bigSum}}</div> -->
     <!-- <Category></Category> -->
@@ -41,7 +42,10 @@ export default {
     // ...mapMutations(['Add'])
     // mapActions练习
     // ...mapActions({Add:'add'})
-    ...mapActions('addOptions',['add'])
+    // ...mapActions('addOptions',['add'])
+    add(){
+      this.$store.dispatch('addOptions/add',1)
+    }
   }
 }
 </script>
