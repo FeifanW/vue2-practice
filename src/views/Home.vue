@@ -15,13 +15,16 @@
     }">
       about
     </router-link> -->
-    <router-link :to="{
-      name:'About',
-      query:{
-        test:456,
-        name:'测试名称'
-      }
-    }">
+    <router-link
+    replace
+     :to="{
+        name:'About',
+        query:{
+          test:456,
+          name:'测试名称'
+        }
+      }"
+    >
       about
     </router-link>
     <router-view></router-view>
