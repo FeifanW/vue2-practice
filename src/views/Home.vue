@@ -17,7 +17,7 @@
     </router-link> -->
     <router-link :to="{
       name:'About',
-      params:{
+      query:{
         test:456,
         name:'测试名称'
       }
