@@ -5,11 +5,21 @@
     <button @click="cancel">解绑</button>
     <!-- to的字符串写法 -->
     <!-- <router-link :to='`/home/about?content=${test}`'>about</router-link> -->
+    <!-- <router-link :to='`/home/about/${test}/123`'>about</router-link> -->
     <!-- to的对象写法 -->
-    <router-link :to="{
+    <!-- <router-link :to="{
       name:'About',
       query:{
         title:test
+      }
+    }">
+      about
+    </router-link> -->
+    <router-link :to="{
+      name:'About',
+      params:{
+        test:456,
+        name:'测试名称'
       }
     }">
       about
