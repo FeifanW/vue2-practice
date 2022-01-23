@@ -9,7 +9,7 @@
     <!-- <Category></Category> -->
     <router-view></router-view>
     <router-link to="/home">home</router-link>
-    <router-link to="/about">about</router-link>
+    <!-- <router-link to="/about">about</router-link> -->
   </div>
 </template>
 <script>

@@ -3,7 +3,17 @@
     <img alt="Vue logo" src="../assets/logo.png">
     <HelloWorld ref="test" msg="Welcome to Your Vue.js App"/>
     <button @click="cancel">解绑</button>
-    <router-link to='/home/about'>about</router-link>
+    <!-- to的字符串写法 -->
+    <!-- <router-link :to='`/home/about?content=${test}`'>about</router-link> -->
+    <!-- to的对象写法 -->
+    <router-link :to="{
+      path:'/home/about',
+      query:{
+        title:test
+      }
+    }">
+      about
+    </router-link>
     <router-view></router-view>
   </div>
 </template>
@@ -16,6 +26,11 @@ export default {
   name: 'Home',
   components: {
     HelloWorld
+  },
+  data(){
+    return{
+      test:'测试'
+    }
   },
   methods:{
     output(){
