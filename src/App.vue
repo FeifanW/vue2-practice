@@ -5,6 +5,7 @@
     <button @click="add(1)">+</button>
     <div>{{bigSum}}</div>
     <!-- <div>{{$store.getters.bigSum}}</div> -->
+    <Category></Category>
   </div>
 </template>
 <script>
