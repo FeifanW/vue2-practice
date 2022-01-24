@@ -28,6 +28,12 @@ export default {
   },
   beforeDestroy(){
     console.log("组件销毁了！")
+  },
+  activated(){
+    console.log("组件被激活了")
+  },
+  deactivated(){
+    console.log("组件失活了")
   }
 }
 </script>

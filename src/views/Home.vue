@@ -31,7 +31,8 @@
     >
       about
     </router-link> -->
-    <keep-alive include="about"> 
+    <!-- 缓存多个路由组件 -->
+    <keep-alive :include="['about']"> 
       <router-view></router-view>
     </keep-alive>
     <!-- <router-view></router-view> -->
