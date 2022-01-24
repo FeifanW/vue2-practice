@@ -24,9 +24,9 @@ const routes = [
           return {id:$route.query.test,title:$route.query.name}
         },
         meta:{isAbout:true},
-        beforeEnter: (to, from, next) => {
-          console.log("独享路由守卫")
-        }
+        // beforeEnter: (to, from, next) => {
+        //   console.log("独享路由守卫")
+        // }
       }
     ]
   },

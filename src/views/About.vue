@@ -26,6 +26,15 @@ export default {
       // this.$router.
     }
   },
+  beforeRouteEnter (to, from, next) {
+    // ...
+    console.log("进入about了")
+    next()
+  },
+  beforeRouteLeave (to, from, next) {
+    // ...
+    console.log("离开about了")
+  },
   beforeDestroy(){
     console.log("组件销毁了！")
   },
