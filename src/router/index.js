@@ -23,6 +23,7 @@ const routes = [
         props($route){
           return {id:$route.query.test,title:$route.query.name}
         },
+        meta:{isAbout:true}
       }
     ]
   },
@@ -38,6 +39,15 @@ const routes = [
 
 const router = new VueRouter({
   routes
+})
+
+router.afterEach((to,from, next)=>{
+  if(to.meta.isAbout){
+    console.log("被拦截了")
+    document.title = "关于"
+  }else{
+    // next()
+  }
 })
 
 export default router
