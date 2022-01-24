@@ -23,7 +23,10 @@ const routes = [
         props($route){
           return {id:$route.query.test,title:$route.query.name}
         },
-        meta:{isAbout:true}
+        meta:{isAbout:true},
+        beforeEnter: (to, from, next) => {
+          console.log("独享路由守卫")
+        }
       }
     ]
   },
@@ -41,13 +44,13 @@ const router = new VueRouter({
   routes
 })
 
-router.afterEach((to,from, next)=>{
-  if(to.meta.isAbout){
-    console.log("被拦截了")
-    document.title = "关于"
-  }else{
-    // next()
-  }
-})
+// router.afterEach((to,from, next)=>{
+//   if(to.meta.isAbout){
+//     console.log("被拦截了")
+//     document.title = "关于"
+//   }else{
+//     // next()
+//   }
+// })
 
 export default router
