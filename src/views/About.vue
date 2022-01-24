@@ -7,6 +7,7 @@
     <h1>name:{{title}}</h1>
     <!-- <h1>a:{{a}}</h1> -->
     <!-- <h1>b:{{b}}</h1> -->
+    <button @click="backLast">返回Home路由</button>
 
   </div>
 </template>
@@ -21,6 +22,9 @@ export default {
     }
   },
   methods:{
+    backLast(){
+      // this.$router.
+    }
   },
 
 }

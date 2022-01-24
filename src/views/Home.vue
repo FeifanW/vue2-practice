@@ -2,6 +2,9 @@
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png">
     <HelloWorld ref="test" msg="Welcome to Your Vue.js App"/>
+    <button @click="houtui">后退</button>
+    <button @click="qianjin">前进</button>
+    <button @click="gou">go测试</button>
     <button @click="cancel">解绑</button>
     <!-- to的字符串写法 -->
     <!-- <router-link :to='`/home/about?content=${test}`'>about</router-link> -->
@@ -15,7 +18,8 @@
     }">
       about
     </router-link> -->
-    <router-link
+    <button @click="jump">跳转到about</button>
+    <!-- <router-link
     replace
      :to="{
         name:'About',
@@ -26,7 +30,7 @@
       }"
     >
       about
-    </router-link>
+    </router-link> -->
     <router-view></router-view>
   </div>
 </template>
@@ -57,6 +61,33 @@ export default {
       // this.$refs.test.$off('hello')
       // this.$refs.test.$off('world')
       this.$refs.test.$off(['hello','world'])
+    },
+    jump(){  // 跳转到about路由
+      this.$router.push({
+        name:'About',
+        query:{
+          test:456,
+          name:'测试名称'
+        }
+      })
+    },
+    // jump(){  // 跳转到about路由
+    //   this.$router.replace({
+    //     name:'About',
+    //     query:{
+    //       test:456,
+    //       name:'测试名称'
+    //     }
+    //   })
+    // }
+    houtui(){
+      this.$router.back()
+    },
+    qianjin(){
+      this.$router.forward()
+    },
+    gou(){
+      this.$router.go(-1)
     }
   },
   mounted(){
