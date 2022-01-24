@@ -26,7 +26,9 @@ export default {
       // this.$router.
     }
   },
-
+  beforeDestroy(){
+    console.log("组件销毁了！")
+  }
 }
 </script>
 

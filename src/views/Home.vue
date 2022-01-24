@@ -31,7 +31,10 @@
     >
       about
     </router-link> -->
-    <router-view></router-view>
+    <keep-alive include="about"> 
+      <router-view></router-view>
+    </keep-alive>
+    <!-- <router-view></router-view> -->
   </div>
 </template>
 
