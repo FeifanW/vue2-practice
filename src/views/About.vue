@@ -28,6 +28,7 @@ export default {
   },
   beforeRouteEnter (to, from, next) {
     // ...
+    console.log("from")
     console.log("进入about了")
     next()
   },
