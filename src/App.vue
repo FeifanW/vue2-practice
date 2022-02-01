@@ -10,6 +10,7 @@
     <router-view></router-view>
     <router-link to="/home">home</router-link>
     <!-- <router-link to="/about">about</router-link> -->
+    <el-button>测试element ui</el-button>
   </div>
 </template>
 <script>
